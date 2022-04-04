@@ -1,21 +1,30 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-	int i,j,sum=0,k;
-	scanf("%d",&i);
-	k=i;
-	while(i>0)
+	int n;
+	scanf("%d",&n);
+	int t=n;
+	int t1=n;
+	int l=0;
+	while(n>0)
 	{
-		j=i%10;
-		sum=sum+(j*j*j);
-		i=i/10;
+		n=n/10;
+		l++;
 	}
-	if(k==sum)
+	int r,sum=0;
+	while(t>0)
 	{
-		printf("armstrong number");
+		r=t%10;
+		sum=sum+pow(r,l);
+		t=t/10;
+	}
+	if(sum == t1)
+	{
+		printf("Armstrong");
 	}
 	else
 	{
-		printf("not a armstrong number");
+		printf("not armstrong");
 	}
 }
